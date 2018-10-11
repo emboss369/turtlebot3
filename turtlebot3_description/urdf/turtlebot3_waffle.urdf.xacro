@@ -8,6 +8,9 @@
   <xacro:property name="r200_cam_rgb_pz" value="0.013"/>
   <xacro:property name="r200_cam_depth_offset" value="0.01"/>
 
+
+  <property name="M_PI" value="3.14159274"/>
+
   <link name="base_footprint"/>
 
   <joint name="base_joint" type="fixed">
@@ -191,7 +194,7 @@
   </link>
 
   <joint name="camera_joint" type="fixed">
-    <origin xyz="0.064 -0.065 0.115" rpy="0 0 0"/>
+    <origin xyz="0.064 -0.065 0.115" rpy="0 ${-10*M_PI/180} 0"/>
     <parent link="base_link"/>
     <child link="camera_link"/>
   </joint>
