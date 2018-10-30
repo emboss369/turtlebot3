@@ -194,22 +194,24 @@
   </link>
 
   <joint name="camera_joint" type="fixed">
-    <origin xyz="0.064 -0.065 0.115" rpy="0 ${-7.7*M_PI/180} 0"/>
+    <origin xyz="0.100 0 0.133" rpy="0 ${-7.7*M_PI/180} 0"/>
     <parent link="base_link"/>
     <child link="camera_link"/>
   </joint>
 
   <link name="camera_link">
+
     <visual>
      <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
       <geometry>
-       <mesh filename="package://turtlebot3_description/meshes/sensors/r200.dae" />
+       <mesh filename="package://realsense2_camera/meshes/d435.dae" />
       </geometry>
     </visual>
+
     <collision>
-      <origin xyz="0.003 0.065 0.007" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <box size="0.012 0.132 0.020"/>
+        <box size="0.025 0.090 0.025"/>
       </geometry>
     </collision>
 
@@ -222,7 +224,7 @@
                izz="0.003879257" />
     </inertial>-->
   </link>
-
+<!--
   <joint name="camera_rgb_joint" type="fixed">
     <origin xyz="${r200_cam_rgb_px} ${r200_cam_rgb_py} ${r200_cam_rgb_pz}" rpy="0 0 0"/>
     <parent link="camera_link"/>
@@ -250,5 +252,5 @@
     <child link="camera_depth_optical_frame"/>
   </joint>
   <link name="camera_depth_optical_frame"/>
-
+-->
 </robot>
